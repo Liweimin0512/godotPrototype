@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Card/2dmj_cardnum_mahjong_1.png" type="Texture" id=1]
+[ext_resource path="res://CardFrame/2dmj_card_me_face_1.png" type="Texture" id=2]
+
+[node name="HandCard" type="Node2D"]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="2dmj_card_me_face_1" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="2dmj_cardnum_mahjong_1" type="Sprite" parent="2dmj_card_me_face_1"]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -15 )

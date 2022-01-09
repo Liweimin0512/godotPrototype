@@ -1,7 +1,9 @@
+class_name Player
+
 extends Node
 
-
-var arr_pais = []
+var playerID
+var _handpais = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +16,7 @@ func _ready():
 
 func can_ting():
 	var n_gupai = 0
-	var arr = arr_pais.sort()
+	var arr = _handpais.sort()
 	# 遍历所有牌
 	for pai_num in range(arr):
 		# 能否组成顺子
@@ -32,7 +34,7 @@ func can_ting():
 
 func get_shunzi(pai_num:int) -> Array:
 	var shunzi = []
-	var arr = arr_pais.sort()
+	var arr = _handpais.sort()
 	if arr[pai_num + 1] == arr[pai_num] + 1 and arr[pai_num + 2] == arr[pai_num] + 2:
 		shunzi.append(arr[pai_num])
 		shunzi.append(arr[pai_num + 1])
@@ -42,10 +44,13 @@ func get_shunzi(pai_num:int) -> Array:
 
 func get_peng(pai_num:int):
 	var kezi = []
-	var arr = arr_pais.sort()
+	var arr = _handpais.sort()
 	if arr[pai_num + 1] == arr[pai_num] and arr[pai_num + 2] == arr[pai_num]:
 		kezi.append(arr[pai_num])
 		kezi.append(arr[pai_num + 1])
 		kezi.append(arr[pai_num + 2])		
 	return kezi
 		
+func add_handpais(pais):
+	_handpais += pais
+	print("玩家: ", String(playerID), "抓牌后手牌：", _handpais)
