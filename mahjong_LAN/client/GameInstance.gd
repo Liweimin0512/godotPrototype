@@ -3,6 +3,7 @@ extends Node
 var players :Array
 var turn_player_count = 0
 
+
 var paiku = []
 
 func _ready():
