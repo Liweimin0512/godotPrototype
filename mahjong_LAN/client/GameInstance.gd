@@ -1,22 +1,24 @@
 extends Node
 
 var players :Array
-var turn_player_count = 0
-
+var zhuangjia_num = 0 # 庄家编号
 
 var paiku = []
 
 func _ready():
+
+	var player_num = rand_range(0,4)
 	# 四个选手
 	for i in range(0,4):
 		var player = Player.new()
 		player.playerID = i
+		if i == player_num:
+			player.is_AI = false
 		players.append(player)
 		add_child(player)
 	
 	# 洗牌
 	mapai()
-	
 	
 	# 发牌
 	for p in players:
@@ -25,6 +27,17 @@ func _ready():
 	# 检查是否有人听牌
 	
 	
+	# 检查是否有人杠牌
+
+	
+	# 轮询是否有人碰牌或杠牌
+
+	# 下家是否吃牌
+
+	# 
+
+func begin
+
 
 
 func get_next_player():

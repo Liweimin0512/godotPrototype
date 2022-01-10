@@ -4,6 +4,14 @@ extends Node
 
 var playerID
 var _handpais = []
+var is_AI :bool = true
+
+enum player_state {
+	normal,
+	qiangting,
+	ting,
+	hu,
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,3 +62,11 @@ func get_peng(pai_num:int):
 func add_handpais(pais):
 	_handpais += pais
 	print("玩家: ", String(playerID), "抓牌后手牌：", _handpais)
+
+func on_turn():
+	# 本轮抓牌
+
+	# 如果听牌，检查是否胡牌
+
+	# 本轮打牌
+	pass
