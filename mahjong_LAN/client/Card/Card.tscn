@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://CardFrame/2dmj_card_me_stand_1.png" type="Texture" id=1]
 [ext_resource path="res://Card/2dmj_cardnum_mahjong_1.png" type="Texture" id=2]
+[ext_resource path="res://Card/Card.gd" type="Script" id=3]
 
-[node name="Control" type="TextureRect"]
+[node name="CardFrame" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -940.0
@@ -11,6 +12,7 @@ margin_bottom = -482.0
 rect_min_size = Vector2( 42, 59 )
 rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -20,7 +22,7 @@ margin_top = 26.0
 margin_right = 84.0
 margin_bottom = 118.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+[node name="Card" type="TextureRect" parent="MarginContainer"]
 margin_left = 16.0
 margin_top = 9.0
 margin_right = 68.0
