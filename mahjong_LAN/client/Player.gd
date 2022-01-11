@@ -4,6 +4,10 @@ extends Node
 
 var playerID
 var _handpais = []
+var _pais_ming = [] # 亮出的牌
+var _pais_an = [] # 手牌
+var _pais_dachu = [] # 打出的牌
+
 var is_AI :bool = true
 
 enum player_state {
@@ -17,26 +21,32 @@ enum player_state {
 func _ready():
 	pass # Replace with function body.
 
+func get_next_player():
+	if playerID >= 3:
+		return GameInstance.players[0]
+	else:
+		return GameInstance.players[playerID + 1]
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
-func can_ting():
-	var n_gupai = 0
-	var arr = _handpais.sort()
-	# 遍历所有牌
-	for pai_num in range(arr):
-		# 能否组成顺子
-		if arr[pai_num + 1] == arr[pai_num] + 1 and arr[pai_num + 2] == arr[pai_num] + 2:
-			arr.remov
-		# 能否组成刻子
-		# 能否组成对子
-		
-		# 都不能
-		n_gupai += 1
-		if n_gupai >= 4 :
-			return false
+func check_tingpai():
+	# 检查是否听牌
+	# if is_AI == true:
+	GameInstance.emit_signal("check_ting",self,false)
+	# else:
+	# 	var n_gupai = 0
+	# 	var arr = _handpais.sort()
+	# 	# 遍历所有牌
+	# 	for pai_num in range(arr):
+	# 		# 能否组成顺子
+	# 		if arr[pai_num + 1] == arr[pai_num] + 1 and arr[pai_num + 2] == arr[pai_num] + 2:
+	# 			arr.remov
+	# 		# 能否组成刻子
+	# 		# 能否组成对子
+			
+	# 		# 都不能
+	# 		n_gupai += 1
+	# 		if n_gupai >= 4 :
+	# 			return false
 		
 
 
