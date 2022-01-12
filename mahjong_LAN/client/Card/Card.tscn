@@ -12,6 +12,7 @@ margin_bottom = -482.0
 rect_min_size = Vector2( 42, 59 )
 rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
+expand = true
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -21,10 +22,15 @@ __meta__ = {
 margin_top = 26.0
 margin_right = 84.0
 margin_bottom = 118.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Card" type="TextureRect" parent="MarginContainer"]
-margin_left = 16.0
-margin_top = 9.0
-margin_right = 68.0
-margin_bottom = 83.0
+margin_left = 21.0
+margin_top = 16.0
+margin_right = 63.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 42, 59 )
 texture = ExtResource( 2 )
+expand = true
