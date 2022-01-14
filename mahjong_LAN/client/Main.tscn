@@ -8,13 +8,149 @@
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-visible = false
-anchor_top = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_left = 131.075
+margin_top = 76.7296
+margin_right = 155.075
+margin_bottom = 506.73
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_left" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_bottom = 27.0
+
+[node name="card_left2" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 31.0
+margin_bottom = 58.0
+
+[node name="card_left3" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 62.0
+margin_bottom = 89.0
+
+[node name="card_left4" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 93.0
+margin_bottom = 120.0
+
+[node name="card_left5" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 124.0
+margin_bottom = 151.0
+
+[node name="card_left6" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 155.0
+margin_bottom = 182.0
+
+[node name="card_left7" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 186.0
+margin_bottom = 213.0
+
+[node name="card_left8" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 217.0
+margin_bottom = 244.0
+
+[node name="card_left9" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 248.0
+margin_bottom = 275.0
+
+[node name="card_left10" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 279.0
+margin_bottom = 306.0
+
+[node name="card_left11" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 310.0
+margin_bottom = 337.0
+
+[node name="card_left12" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 341.0
+margin_bottom = 368.0
+
+[node name="card_left13" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 372.0
+margin_bottom = 399.0
+
+[node name="card_left14" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 403.0
+margin_bottom = 430.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -196.729
+margin_top = -215.0
+margin_right = -172.729
+margin_bottom = 215.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_left" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_bottom = 27.0
+
+[node name="card_left2" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 31.0
+margin_bottom = 58.0
+
+[node name="card_left3" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 62.0
+margin_bottom = 89.0
+
+[node name="card_left4" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 93.0
+margin_bottom = 120.0
+
+[node name="card_left5" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 124.0
+margin_bottom = 151.0
+
+[node name="card_left6" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 155.0
+margin_bottom = 182.0
+
+[node name="card_left7" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 186.0
+margin_bottom = 213.0
+
+[node name="card_left8" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 217.0
+margin_bottom = 244.0
+
+[node name="card_left9" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 248.0
+margin_bottom = 275.0
+
+[node name="card_left10" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 279.0
+margin_bottom = 306.0
+
+[node name="card_left11" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 310.0
+margin_bottom = 337.0
+
+[node name="card_left12" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 341.0
+margin_bottom = 368.0
+
+[node name="card_left13" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 372.0
+margin_bottom = 399.0
+
+[node name="card_left14" parent="Control/VBoxContainer2" instance=ExtResource( 3 )]
+margin_top = 403.0
+margin_bottom = 430.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -86.0
-margin_bottom = -2.0
+margin_left = -401.0
+margin_top = -95.0
+margin_right = 446.0
+margin_bottom = -11.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -23,39 +159,115 @@ __meta__ = {
 [node name="CardFrame" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 42.0
+margin_right = 58.0
 margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
 rect_scale = Vector2( 1, 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-margin_left = 41.0
-margin_top = 89.0
-margin_right = 65.0
-margin_bottom = 518.0
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CardFrame2" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 62.0
+margin_right = 120.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
 
-[node name="card_left" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
-margin_bottom = 62.0
+[node name="CardFrame3" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 124.0
+margin_right = 182.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
 
-[node name="card_left4" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 66.0
-margin_bottom = 128.0
+[node name="CardFrame4" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 186.0
+margin_right = 244.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
 
-[node name="card_left5" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 132.0
-margin_bottom = 194.0
+[node name="CardFrame5" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 248.0
+margin_right = 306.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
 
-[node name="card_left6" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 198.0
-margin_bottom = 260.0
+[node name="CardFrame6" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 310.0
+margin_right = 368.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
 
-[node name="card_left2" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 264.0
-margin_bottom = 326.0
+[node name="CardFrame7" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 372.0
+margin_right = 430.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
 
-[node name="card_left3" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 330.0
-margin_bottom = 392.0
+[node name="CardFrame8" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 434.0
+margin_right = 492.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
+
+[node name="CardFrame9" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 496.0
+margin_right = 554.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
+
+[node name="CardFrame10" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 558.0
+margin_right = 616.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
+
+[node name="CardFrame11" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 620.0
+margin_right = 678.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
+
+[node name="CardFrame12" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 682.0
+margin_right = 740.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )
+
+[node name="CardFrame13" parent="Control/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 744.0
+margin_right = 802.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 58, 82 )
+rect_scale = Vector2( 1, 1 )

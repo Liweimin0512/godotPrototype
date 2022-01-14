@@ -7,8 +7,8 @@
 [node name="CardFrame" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -940.0
-margin_bottom = -482.0
+margin_right = -982.0
+margin_bottom = -541.0
 rect_min_size = Vector2( 42, 59 )
 rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
@@ -18,19 +18,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="CenterContainer" parent="."]
-margin_top = 26.0
-margin_right = 84.0
-margin_bottom = 118.0
+[node name="Card" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 14.0
+texture = ExtResource( 2 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Card" type="TextureRect" parent="MarginContainer"]
-margin_left = 21.0
-margin_top = 16.0
-margin_right = 63.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 42, 59 )
-texture = ExtResource( 2 )
-expand = true
