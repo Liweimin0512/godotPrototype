@@ -79,7 +79,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://player.gd"
 }, {
-"base": "State",
+"base": "Reference",
 "class": "PlayerState",
 "language": "GDScript",
 "path": "res://state_machie/player_state.gd"
@@ -104,12 +104,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://behavior_tree/composite/composite_sequence.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "State",
 "language": "GDScript",
 "path": "res://state_machie/state.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://state_machie/state_machine.gd"
