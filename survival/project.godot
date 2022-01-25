@@ -1,0 +1,168 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Task",
+"class": "AlwaysFail",
+"language": "GDScript",
+"path": "res://behavior_tree/decorator/decorator_always_fail.gd"
+}, {
+"base": "TimedGameplayEffect",
+"class": "AttributeConsumeGameplayEffect",
+"language": "GDScript",
+"path": "res://addons/godot-gameplay-attributes/premade_gameplay_effects/AttributeConsumeGameplayEffect.gd"
+}, {
+"base": "TimedGameplayEffect",
+"class": "AttributeRegenGameplayEffect",
+"language": "GDScript",
+"path": "res://addons/godot-gameplay-attributes/premade_gameplay_effects/AttributeRegenGameplayEffect.gd"
+}, {
+"base": "Task",
+"class": "Counter",
+"language": "GDScript",
+"path": "res://behavior_tree/leaf/leaf_counter.gd"
+}, {
+"base": "GameplayEffect",
+"class": "DamageGameplayEffect",
+"language": "GDScript",
+"path": "res://addons/godot-gameplay-attributes/premade_gameplay_effects/DamageGameplayEffect.gd"
+}, {
+"base": "Node",
+"class": "EventComponent",
+"language": "GDScript",
+"path": "res://event_bus/event_compoent.gd"
+}, {
+"base": "Resource",
+"class": "EventResource",
+"language": "GDScript",
+"path": "res://event_bus/event_res.gd"
+}, {
+"base": "Node",
+"class": "GameplayAttribute",
+"language": "GDScript",
+"path": "res://addons/godot-gameplay-attributes/nodes/GameplayAttribute.gd"
+}, {
+"base": "Node",
+"class": "GameplayAttributeMap",
+"language": "GDScript",
+"path": "res://addons/godot-gameplay-attributes/nodes/GameplayAttributeMap.gd"
+}, {
+"base": "Node",
+"class": "GameplayEffect",
+"language": "GDScript",
+"path": "res://addons/godot-gameplay-attributes/nodes/GameplayEffect.gd"
+}, {
+"base": "Task",
+"class": "Invert",
+"language": "GDScript",
+"path": "res://behavior_tree/decorator/decorator_invert.gd"
+}, {
+"base": "Task",
+"class": "Leaf",
+"language": "GDScript",
+"path": "res://behavior_tree/leaf/leaf_task.gd"
+}, {
+"base": "Task",
+"class": "Parallel",
+"language": "GDScript",
+"path": "res://behavior_tree/composite/composite_Parallel.gd"
+}, {
+"base": "Node2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://player.gd"
+}, {
+"base": "State",
+"class": "PlayerState",
+"language": "GDScript",
+"path": "res://state_machie/player_state.gd"
+}, {
+"base": "Task",
+"class": "RandomSelector",
+"language": "GDScript",
+"path": "res://behavior_tree/composite/composite_random_selector.gd"
+}, {
+"base": "Task",
+"class": "Repeat",
+"language": "GDScript",
+"path": "res://behavior_tree/decorator/decorator_repeat.gd"
+}, {
+"base": "GameplayEffect",
+"class": "RestoreGameplayEffect",
+"language": "GDScript",
+"path": "res://addons/godot-gameplay-attributes/premade_gameplay_effects/RestoreGameplayEffect.gd"
+}, {
+"base": "Task",
+"class": "Sequence",
+"language": "GDScript",
+"path": "res://behavior_tree/composite/composite_sequence.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://state_machie/state.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://state_machie/state_machine.gd"
+}, {
+"base": "Node",
+"class": "Task",
+"language": "GDScript",
+"path": "res://behavior_tree/task_base.gd"
+}, {
+"base": "GameplayEffect",
+"class": "TimedGameplayEffect",
+"language": "GDScript",
+"path": "res://addons/godot-gameplay-attributes/nodes/TimedGameplayEffect.gd"
+} ]
+_global_script_class_icons={
+"AlwaysFail": "",
+"AttributeConsumeGameplayEffect": "",
+"AttributeRegenGameplayEffect": "",
+"Counter": "",
+"DamageGameplayEffect": "",
+"EventComponent": "",
+"EventResource": "",
+"GameplayAttribute": "",
+"GameplayAttributeMap": "",
+"GameplayEffect": "",
+"Invert": "",
+"Leaf": "",
+"Parallel": "",
+"Player": "",
+"PlayerState": "",
+"RandomSelector": "",
+"Repeat": "",
+"RestoreGameplayEffect": "",
+"Sequence": "",
+"State": "",
+"StateMachine": "",
+"Task": "",
+"TimedGameplayEffect": ""
+}
+
+[application]
+
+config/name="Survival"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/godot-gameplay-attributes/plugin.cfg" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
