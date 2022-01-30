@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Task",
 "class": "AlwaysFail",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/decorator/decorator_always_fail.gd"
+"path": "res://addons/QFramework/behavior_tree/decorator/decorator_always_fail.gd"
 }, {
 "base": "EntityBase",
 "class": "BuildBase",
@@ -32,7 +32,7 @@ _global_script_classes=[ {
 "base": "Task",
 "class": "Counter",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/leaf/leaf_counter.gd"
+"path": "res://addons/QFramework/behavior_tree/leaf/leaf_counter.gd"
 }, {
 "base": "Node",
 "class": "DatatableManager",
@@ -47,32 +47,32 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "EntityManager",
 "language": "GDScript",
-"path": "res://addons/QFramework/manager_entity.gd"
+"path": "res://addons/QFramework/entities/manager_entity.gd"
 }, {
 "base": "Node",
 "class": "EventComponent",
 "language": "GDScript",
-"path": "res://game_play/event_bus/event_compoent.gd"
+"path": "res://addons/QFramework/event/event_compoent.gd"
 }, {
 "base": "Resource",
 "class": "EventResource",
 "language": "GDScript",
-"path": "res://game_play/event_bus/event_res.gd"
+"path": "res://addons/QFramework/event/event_res.gd"
 }, {
 "base": "Task",
 "class": "Invert",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/decorator/decorator_invert.gd"
+"path": "res://addons/QFramework/behavior_tree/decorator/decorator_invert.gd"
 }, {
 "base": "Task",
 "class": "Leaf",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/leaf/leaf_task.gd"
+"path": "res://addons/QFramework/behavior_tree/leaf/leaf_task.gd"
 }, {
 "base": "Task",
 "class": "Parallel",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/composite/composite_Parallel.gd"
+"path": "res://addons/QFramework/behavior_tree/composite/composite_Parallel.gd"
 }, {
 "base": "Node2D",
 "class": "Player",
@@ -84,10 +84,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/QFramework/components/component_move_controller.gd"
 }, {
-"base": "State",
+"base": "StateBase",
 "class": "PlayerState",
 "language": "GDScript",
-"path": "res://game_play/state_machie/player_state.gd"
+"path": "res://addons/QFramework/state_machie/player_state.gd"
 }, {
 "base": "StateBase",
 "class": "ProcedureBase",
@@ -102,12 +102,27 @@ _global_script_classes=[ {
 "base": "Task",
 "class": "RandomSelector",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/composite/composite_random_selector.gd"
+"path": "res://addons/QFramework/behavior_tree/composite/composite_random_selector.gd"
 }, {
 "base": "Task",
 "class": "Repeat",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/decorator/decorator_repeat.gd"
+"path": "res://addons/QFramework/behavior_tree/decorator/decorator_repeat.gd"
+}, {
+"base": "Node",
+"class": "ResourceAsyncLoader",
+"language": "GDScript",
+"path": "res://addons/QFramework/resource/resource_async_loader.gd"
+}, {
+"base": "Node",
+"class": "ResourceManager",
+"language": "GDScript",
+"path": "res://addons/QFramework/resource/manager_resource.gd"
+}, {
+"base": "Node",
+"class": "ResourceQueue",
+"language": "GDScript",
+"path": "res://addons/QFramework/resource/resource_queue.gd"
 }, {
 "base": "Node",
 "class": "SceneManager",
@@ -117,22 +132,17 @@ _global_script_classes=[ {
 "base": "Task",
 "class": "Sequence",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/composite/composite_sequence.gd"
-}, {
-"base": "Node",
-"class": "State",
-"language": "GDScript",
-"path": "res://game_play/state_machie/state.gd"
+"path": "res://addons/QFramework/behavior_tree/composite/composite_sequence.gd"
 }, {
 "base": "Node",
 "class": "StateBase",
 "language": "GDScript",
 "path": "res://addons/QFramework/state_machie/state_base.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://game_play/state_machie/state_machine.gd"
+"path": "res://addons/QFramework/state_machie/state_machine.gd"
 }, {
 "base": "Resource",
 "class": "SurvivalPlayerState",
@@ -142,7 +152,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Task",
 "language": "GDScript",
-"path": "res://game_play/behavior_tree/task_base.gd"
+"path": "res://addons/QFramework/behavior_tree/task_base.gd"
 }, {
 "base": "Node",
 "class": "TimeManager",
@@ -180,9 +190,11 @@ _global_script_class_icons={
 "ProcedureManager": "",
 "RandomSelector": "",
 "Repeat": "",
+"ResourceAsyncLoader": "",
+"ResourceManager": "",
+"ResourceQueue": "",
 "SceneManager": "",
 "Sequence": "",
-"State": "",
 "StateBase": "",
 "StateMachine": "",
 "SurvivalPlayerState": "",
@@ -200,10 +212,11 @@ config/icon="res://icon.png"
 [autoload]
 
 GameInstance="*res://game_play/GameInstance.gd"
+QInstance="*res://addons/QFramework/q_instance.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/QFramework/plugin.cfg", "res://addons/godot-gameplay-attributes/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/QFramework/plugin.cfg" )
 
 [physics]
 

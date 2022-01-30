@@ -1,3 +1,6 @@
+extends Node
+class_name ResourceQueue
+
 var thread
 var mutex
 var sem

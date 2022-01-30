@@ -7,10 +7,15 @@
 # （当然，你也可以定义自己的内存管理策略）。
 # 多数情况下，在使用 GameObject 的过程中，
 # 你甚至可以不需要自行进行 Instantiate 或者是 Destroy 操作
+extends Node
+class_name ResourceManager
 
 # Initialize.
-queue = preload("res://addons/QFramework/resource/resource_queue.gd").new()
+onready var queue : ResourceQueue = preload("res://addons/QFramework/resource/resource_queue.gd").new()
 queue.start()
+
+func _ready():
+	pass
 
 # Suppose your game starts with a 10 second cutscene, during which the user
 # can't interact with the game.
@@ -30,9 +35,9 @@ queue.queue_resource("res://level_1.tscn", true)
 
 # To check progress.
 if queue.is_ready("res://level_1.tscn"):
-    show_new_level(queue.get_resource("res://level_1.tscn"))
+	show_new_level(queue.get_resource("res://level_1.tscn"))
 else:
-    update_progress(queue.get_progress("res://level_1.tscn"))
+	update_progress(queue.get_progress("res://level_1.tscn"))
 
 # When the user walks away from the trigger zone in your Metroidvania game:
 queue.cancel_resource("res://zone_2.tscn")

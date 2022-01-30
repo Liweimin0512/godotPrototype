@@ -2,9 +2,6 @@ extends Node
 
 var current_scene = null
 var player : Player
-var world_manager : WorldManager
-var entity_manager : EntityManager
-var time_manager : TimeManager
 var game_speed = 1
 
 func _ready():
@@ -47,27 +44,3 @@ func _deferred_goto_scene(path):
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	#（可选）使其与SceneTree.change_scene（）API兼容。
 	get_tree().set_current_scene(current_scene)
-
-func get_world_manager() -> WorldManager:
-	if !world_manager:
-		printerr("cannot found world manager!")
-		world_manager = WorldManager.new()
-		self.add_child(world_manager)
-		return world_manager
-	return world_manager
-
-func get_entity_manager() -> EntityManager:
-	if !entity_manager:
-		printerr("cannot found entity manager!")
-		entity_manager = EntityManager.new()
-		self.add_child(entity_manager)
-		return entity_manager
-	return entity_manager
-
-func get_time_manager()-> TimeManager:
-	if !time_manager:
-		printerr("cannot found time manager!")
-		time_manager = TimeManager.new()
-		self.add_child(time_manager)
-		return time_manager
-	return time_manager
