@@ -1,0 +1,2 @@
+extends StateBase
+class_name ProcedureBase
