@@ -21,11 +21,11 @@ func load_start(resource_list : Array) -> Array:
 func regular_load(resource_in : Array) -> Array:
 	var resources_out := []
 	for res_in in resource_in:
-		resources_out.append(load(res_in).instance())
+		resources_out.append(load(res_in))
 	return resources_out
 		
 func threaded_load(resources_in : Array) -> void:
 	var resources_out = []
 	for res_in in resources_in:
-		resources_out.append(load(res_in).instance())
+		resources_out.append(load(res_in))
 	call_deferred('emit_signal', 'done', resources_out)
