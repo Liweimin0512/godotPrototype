@@ -206,7 +206,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameInstance="*res://game_instance.gd"
-QInstance="res://addons/QFramework/q_instance.gd"
+QInstance="*res://addons/QFramework/q_instance.gd"
 
 [editor_plugins]
 

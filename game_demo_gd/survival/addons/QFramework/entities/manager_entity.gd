@@ -8,14 +8,17 @@
 extends Node
 class_name EntityManager
 
-var entities : Dictionary = {}
+var _entities : Dictionary = {}
 
-func create_entity(entity_name :String):
-	var entity : EntityBase = entities[entity_name].new()
+func create_entity(entity_name :String,pos: Vector2):
+	var entity : EntityBase = _entities[entity_name].new()
 	self.add_child(entity)
-	entity.create_entity()
+	entity.create_entity(pos)
 
-func create_build():
-	var build = BuildBase.new()
-	build.add_to_group("build")
-	self.add_child(build)
+#func create_build():
+#	var build = BuildBase.new()
+#	build.add_to_group("build")
+#	self.add_child(build)
+func register_entity(entity_name:String, entity_path:String):
+	var entity : Resource = load(entity_path)
+	self._entities[entity_name] = entity
