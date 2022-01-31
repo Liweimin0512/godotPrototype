@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "EntityBase",
 "language": "GDScript",
-"path": "res://entities/entity_base.gd"
+"path": "res://addons/QFramework/entities/entity_base.gd"
 }, {
 "base": "Node",
 "class": "EntityManager",
@@ -69,20 +69,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/QFramework/behavior_tree/leaf/leaf_task.gd"
 }, {
+"base": "ComponentBase",
+"class": "MoveControllerComponent",
+"language": "GDScript",
+"path": "res://addons/QFramework/components/component_move_controller.gd"
+}, {
 "base": "Task",
 "class": "Parallel",
 "language": "GDScript",
 "path": "res://addons/QFramework/behavior_tree/composite/composite_Parallel.gd"
-}, {
-"base": "Node2D",
-"class": "Player",
-"language": "GDScript",
-"path": "res://entities/player.gd"
-}, {
-"base": "ComponentBase",
-"class": "PlayerControllerComponent",
-"language": "GDScript",
-"path": "res://addons/QFramework/components/component_move_controller.gd"
 }, {
 "base": "StateBase",
 "class": "PlayerState",
@@ -127,7 +122,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "SceneManager",
 "language": "GDScript",
-"path": "res://addons/QFramework/manager_scene.gd"
+"path": "res://addons/QFramework/scene/manager_scene.gd"
 }, {
 "base": "Task",
 "class": "Sequence",
@@ -139,7 +134,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/QFramework/state_machie/state_base.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://addons/QFramework/state_machie/state_machine.gd"
@@ -182,9 +177,8 @@ _global_script_class_icons={
 "EventResource": "",
 "Invert": "",
 "Leaf": "",
+"MoveControllerComponent": "",
 "Parallel": "",
-"Player": "",
-"PlayerControllerComponent": "",
 "PlayerState": "",
 "ProcedureBase": "",
 "ProcedureManager": "",
@@ -211,12 +205,43 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GameInstance="*res://game_play/GameInstance.gd"
-QInstance="*res://addons/QFramework/q_instance.gd"
+GameInstance="*res://game_instance.gd"
+QInstance="res://addons/QFramework/q_instance.gd"
 
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/QFramework/plugin.cfg" )
+
+[input]
+
+ui_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 

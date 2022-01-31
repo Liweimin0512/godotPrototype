@@ -1,12 +1,9 @@
+# 提供场景管理的功能，可以同时加载多个场景，也可以随时卸载任何一个场景，从而很容易地实现场景的分部加载
 extends Node
+class_name SceneManager
 
 var current_scene = null
-var player : Player
-var game_speed = 1
 
-func _ready():
-	pass
-	
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.

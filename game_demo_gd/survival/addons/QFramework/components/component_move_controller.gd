@@ -1,5 +1,5 @@
 extends ComponentBase
-class_name PlayerControllerComponent
+class_name MoveControllerComponent
 
 export (int) var speed = 200
 var velocity : Vector2
