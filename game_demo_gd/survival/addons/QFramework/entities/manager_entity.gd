@@ -9,10 +9,12 @@ extends Node
 class_name EntityManager
 
 var _entities : Dictionary = {}
+var _entity_GUID := 0
 
 func create_entity(entity_name :String,pos: Vector2):
-	var entity : EntityBase = _entities[entity_name].new()
+	var entity = _entities[entity_name].new()
 	self.add_child(entity)
+	entity.entity_manager = self
 	entity.create_entity(pos)
 
 #func create_build():
@@ -22,3 +24,7 @@ func create_entity(entity_name :String,pos: Vector2):
 func register_entity(entity_name:String, entity_path:String):
 	var entity : Resource = load(entity_path)
 	self._entities[entity_name] = entity
+
+func get_GUID() -> int:
+	_entity_GUID += 1
+	return _entity_GUID
