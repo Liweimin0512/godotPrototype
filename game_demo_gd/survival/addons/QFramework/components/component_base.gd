@@ -7,4 +7,4 @@ var entity : Node
 #     pass
 
 func _ready():
-    yield(owner,"ready")
+	yield(owner,"ready")
