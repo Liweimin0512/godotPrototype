@@ -36,5 +36,6 @@ func get_point() -> Vector2:
         return self.inst.game_entity.position
     elif self.world_offset :
         return self.world_offset
-    else
+    else:
         return Vector2()
+

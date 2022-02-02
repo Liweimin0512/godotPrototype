@@ -148,7 +148,6 @@ func add_component(name : String):
 
 	# for k in post_init_fns:
 	# 	fn(loaded_cmp, self)
-	return cmp
 	
 func remove_component(name):
 	var cmp = self._components[name]
@@ -277,10 +276,10 @@ func get_angle_to_point(x,y,z):
 	# 	z = x
 
 	# var px, py, pz = self.game_entity.position
-	# var dz = pz - z
-	# var dx = x - px
-	# var angle = MATH_ATAN2(dz, dx) / DEGREES
-	# return angle
+    # var dz = pz - z
+    # var dx = x - px
+    # var angle = MATH_ATAN2(dz, dx) / DEGREES
+    # return angle
 	pass
 
 func force_face_point():
@@ -289,3 +288,5 @@ func force_face_point():
 func force_point(x,y,z):
 	pass
 
+func get_components():
+	return _components
