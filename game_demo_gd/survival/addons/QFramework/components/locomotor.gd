@@ -31,9 +31,9 @@ func get_point() -> Vector2:
     var pt = null
 
     if self.inst and self.inst._components.inventory_item and self.inst._components.inventory_item.owner:
-        return self.inst._components.inventory_item.owner.game_entity.position
+        return self.inst._components.inventory_item.owner.game_prefab.position
     elif self.inst :
-        return self.inst.game_entity.position
+        return self.inst.game_prefab.position
     elif self.world_offset :
         return self.world_offset
     else:

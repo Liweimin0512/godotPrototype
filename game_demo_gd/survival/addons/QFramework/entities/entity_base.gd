@@ -9,9 +9,8 @@ var _components := {}
 
 var _updating_component := {}
 var _stop_updating_components : Dictionary= {}
-var entity_manager : EntityManager = null
 
-var game_entity
+var game_prefab
 var GUID := 0
 var spawn_time := 0
 var persists := true
@@ -55,29 +54,31 @@ func create_entity(pos : Vector2):
 	if game_scene_path == "":
 		return
 	res_paths.append(game_scene_path)
+	print("create_entity_path: " + String(res_paths))	
 	var res = yield(res_loader.load_start(res_paths),"completed")
-	game_entity = res[0].instance()
-	game_entity.position = pos
-	self.add_child(game_entity)
-	self.GUID = entity_manager.get_GUID()
+	game_prefab = res[0].instance()
+	print(game_prefab.name)
+	game_prefab.position = pos
+	self.add_child(game_prefab)
+	self.GUID = EntityManager.get_GUID()
 
 func get_save_record():
 	pass
 
 func hide():
-	self.game_entity.hide()
+	self.game_prefab.hide()
 
 func show():
-	self.game_entity.show()
+	self.game_prefab.show()
 
 func is_in_limbo():
 	return self.in_limbo
 
 func remove_from_scene():
 	# 从场景中移除当前实体，并不会真的移除，而是将其隐藏在世界原点
-	self.game_entity.add_to_group("IN_LIMBO")
+	self.game_prefab.add_to_group("IN_LIMBO")
 	self.in_limbo = true
-	self.game_entity.hide()
+	self.game_prefab.hide()
 
 	self.stop_brain()
 	
@@ -92,9 +93,9 @@ func remove_from_scene():
 	emit_signal("enter_limbo")
 
 func return_to_scene():
-	self.game_entity.remove_from_group("IN_LIMBO")
+	self.game_prefab.remove_from_group("IN_LIMBO")
 	self.in_limbo = false
-	self.game_entity.show()
+	self.game_prefab.show()
 	if self.anim_state:
 		self.anim_state.resume()
 	if self.mimimap_entity:
@@ -131,10 +132,10 @@ func get_component_name(cmp):
 	return "component"
 
 func add_tag(tag:String):
-	self.game_entity.add_to_group(tag)
+	self.game_prefab.add_to_group(tag)
 
 func remove_tag(tag:String):
-	self.game_entity.remove_from_group(tag)
+	self.game_prefab.remove_from_group(tag)
 
 func add_component(name : String):
 	if self._components[name]:
@@ -181,8 +182,8 @@ func _test_vision_fn(k,v):
 	pass
 
 func set_entity_name(name):
-	self.game_entity = name
-	self.game_entity.name = name
+	self.game_prefab = name
+	self.game_prefab.name = name
 	self.name = name
 
 func set_entity_name_override(name_override) -> void:
@@ -192,7 +193,7 @@ func spawn_entity(entity_name : String):
 	pass
 
 func spawn_child(name):
-	if self.game_entity:
+	if self.game_prefab:
 		assert(self.prefabs, "no prefabs registered for this entity " + name)
 		var prefab = self.prefabs[name]
 		assert(prefab, "Could not spawn unknown child type " + name)
@@ -209,7 +210,7 @@ func remove_child_entity(child):
 	child.parent = null
 	if self.children :
 		self.children[child] = null
-	child.game_entity.set_parent(null)
+	child.game_prefab.set_parent(null)
 
 func add_child_entity(child):
 	if child.parent :
@@ -220,7 +221,7 @@ func add_child_entity(child):
 		self.children = {}
 	
 	self.children[child] = true
-	child.game_entity.set_parent(self.game_entity)
+	child.game_prefab.set_parent(self.game_prefab)
 
 func get_brain_string():
 	pass
@@ -265,7 +266,7 @@ func clear_state_graph():
 ##### 其他 #####
 
 func get_position():
-	return game_entity.position
+	return self.game_prefab.position
 
 func get_angle_to_point(x,y,z):
 	# if not x :
@@ -275,11 +276,11 @@ func get_angle_to_point(x,y,z):
 	# 	y = x
 	# 	z = x
 
-	# var px, py, pz = self.game_entity.position
-    # var dz = pz - z
-    # var dx = x - px
-    # var angle = MATH_ATAN2(dz, dx) / DEGREES
-    # return angle
+	# var px, py, pz = self.game_prefab.position
+	# var dz = pz - z
+	# var dx = x - px
+	# var angle = MATH_ATAN2(dz, dx) / DEGREES
+	# return angle
 	pass
 
 func force_face_point():

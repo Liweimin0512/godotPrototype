@@ -45,11 +45,6 @@ _global_script_classes=[ {
 "path": "res://addons/QFramework/entities/entity_base.gd"
 }, {
 "base": "Node",
-"class": "EntityManager",
-"language": "GDScript",
-"path": "res://addons/QFramework/entities/manager_entity.gd"
-}, {
-"base": "Node",
 "class": "EventComponent",
 "language": "GDScript",
 "path": "res://addons/QFramework/event/event_compoent.gd"
@@ -187,7 +182,6 @@ _global_script_class_icons={
 "Counter": "",
 "DatatableManager": "",
 "EntityBase": "",
-"EntityManager": "",
 "EventComponent": "",
 "EventResource": "",
 "InventoryComponent": "",
@@ -219,12 +213,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Survival"
+run/main_scene="res://scenes/world.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GameInstance="*res://game_instance.gd"
 QInstance="*res://addons/QFramework/q_instance.gd"
+EntityManager="*res://addons/QFramework/entities/manager_entity.gd"
 
 [editor_plugins]
 

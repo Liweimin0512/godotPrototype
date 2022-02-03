@@ -7,7 +7,7 @@ func make_palyer_character(name, custom_prefabs, custom_assets, custom_fn, start
     var inst = create_entity(Vector2(0,0))
     inst.set_can_sleep(false)
 
-    var trans = inst.game_entity.transform
+    var trans = inst.game_prefab.transform
 
     self.add_tag("player")
     self.add_tag("scary_toprey")

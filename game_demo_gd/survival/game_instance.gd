@@ -1,10 +1,14 @@
 extends Node
 
 # var player : Player
-var game_speed = 1
-var entity_manager : EntityManager
+#var game_speed = 1
+#var entity_manager : EntityManager
+
+var player_character
+var player_controller
 
 func _ready():
-	entity_manager = QInstance.get_entity_manager()
-	entity_manager.register_entity("player","res://entities/entity_player.gd")
-	entity_manager.create_entity("player", Vector2(100,100))
+	player_character = EntityManager.create_entity("player",Vector2(100,100))
+	player_controller = load("res://game_play/player_controller.gd").new()
+	self.add_child(player_controller)
+	print("game_instance")

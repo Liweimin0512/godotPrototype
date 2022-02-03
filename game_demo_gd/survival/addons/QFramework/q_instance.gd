@@ -42,8 +42,8 @@ func get_res_loader() -> ResourceAsyncLoader:
 		self.add_child(_res_loader)
 	return _res_loader
 
-func get_entity_manager() -> EntityManager:
-	if !_entity_manager:
-		_entity_manager = EntityManager.new()
-		self.add_child(_entity_manager)
-	return _entity_manager
+#func get_entity_manager() -> EntityManager:
+#	if !_entity_manager:
+#		_entity_manager = EntityManager.new()
+#		self.add_child(_entity_manager)
+#	return _entity_manager

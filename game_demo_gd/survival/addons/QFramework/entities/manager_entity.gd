@@ -6,24 +6,19 @@
 # and hence be recycled for reuse
 
 extends Node
-class_name EntityManager
+# class_name EntityManager
 
-var _entities : Dictionary = {}
 var _entity_GUID := 0
+var entity_path = "res://entities/"
+var _entities := {}
 
 func create_entity(entity_name :String,pos: Vector2):
-	var entity = _entities[entity_name].new()
+	var entity = load(entity_path + entity_name + ".gd").new()
 	self.add_child(entity)
-	entity.entity_manager = self
+#	entity.entity_manager = self
 	entity.create_entity(pos)
-
-#func create_build():
-#	var build = BuildBase.new()
-#	build.add_to_group("build")
-#	self.add_child(build)
-func register_entity(entity_name:String, entity_path:String):
-	var entity : Resource = load(entity_path)
-	self._entities[entity_name] = entity
+	_entities[entity_name] = entity
+	return entity
 
 func get_GUID() -> int:
 	_entity_GUID += 1
