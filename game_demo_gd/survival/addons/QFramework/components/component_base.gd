@@ -1,10 +1,7 @@
 extends Node
 class_name ComponentBase
 
-var entity : Node
+var owner_prefab
 
-# func construct():
-#     pass
-
-func _ready():
+func _enter_tree():
 	yield(owner,"ready")

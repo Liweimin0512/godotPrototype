@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/QFramework/components/component_base.gd"
 }, {
+"base": "Node",
+"class": "ComponetManager",
+"language": "GDScript",
+"path": "res://addons/QFramework/components/component_mananger.gd"
+}, {
 "base": "Task",
 "class": "Counter",
 "language": "GDScript",
@@ -83,6 +88,11 @@ _global_script_classes=[ {
 "class": "PlayerBase",
 "language": "GDScript",
 "path": "res://addons/QFramework/entities/player_base.gd"
+}, {
+"base": "ComponentBase",
+"class": "PlayerController",
+"language": "GDScript",
+"path": "res://components/player_controller.gd"
 }, {
 "base": "StateBase",
 "class": "PlayerState",
@@ -174,6 +184,7 @@ _global_script_class_icons={
 "BuildBase": "",
 "CSVDatatableManager": "",
 "ComponentBase": "",
+"ComponetManager": "",
 "Counter": "",
 "DatatableManager": "",
 "EntityBase": "",
@@ -185,6 +196,7 @@ _global_script_class_icons={
 "Locomotor": "",
 "Parallel": "",
 "PlayerBase": "",
+"PlayerController": "",
 "PlayerState": "",
 "ProcedureBase": "",
 "ProcedureManager": "",

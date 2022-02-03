@@ -1,7 +1,9 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://entities/char1/Char1_idle_16px.png" type="Texture" id=1]
 [ext_resource path="res://entities/char1/Char1_walk_16px.png" type="Texture" id=2]
+[ext_resource path="res://components/player_controller.gd" type="Script" id=3]
+[ext_resource path="res://addons/QFramework/components/component_mananger.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -343,6 +345,7 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 4
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -369,3 +372,9 @@ parameters/conditions/is_walk = false
 parameters/idle/blend_position = Vector2( 0.0017482, -0.410448 )
 parameters/idle/3/playback = SubResource( 28 )
 parameters/walk/blend_position = Vector2( 0, 0 )
+
+[node name="ComponetManager" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="PlayerController" type="Node" parent="ComponetManager"]
+script = ExtResource( 3 )

@@ -1,14 +1,14 @@
-extends Node
+extends ComponentBase
+class_name PlayerController
 
 var velocity : Vector2
 export (int) var speed = 200
-var player_prefab
 
-func _ready():
-	yield(get_parent(),"ready")
-	print("controller")
-#	assert(player_prefab != null)
-
+func _enter_tree():
+	yield(owner,"tree_entered")
+	._enter_tree()
+	owner_prefab as KinematicBody2D
+	assert(owner_prefab != null)
 
 func get_input():
 	velocity = Vector2()
@@ -23,8 +23,5 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func _process(delta):
-	if player_prefab == null:
-		player_prefab = GameInstance.player_character.game_prefab as KinematicBody2D
-	else:
-		get_input()
-		velocity = player_prefab.move_and_slide(velocity)
+	get_input()
+	velocity = owner_prefab.move_and_slide(velocity)

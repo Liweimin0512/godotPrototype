@@ -10,15 +10,21 @@ extends Node
 
 var _entity_GUID := 0
 var entity_path = "res://entities/"
-var _entities := {}
+
+signal create_entity_completed
 
 func create_entity(entity_name :String,pos: Vector2):
-	var entity = load(entity_path + entity_name + ".gd").new()
+	var res_loader = QInstance.get_res_loader()
+	var res_paths = []
+	if entity_name == "":
+		return
+	res_paths.append(entity_path + entity_name + ".tscn")
+	var res = yield(res_loader.load_start(res_paths),"completed")
+	var entity = res[0].instance()
+	entity.position = pos
 	self.add_child(entity)
-#	entity.entity_manager = self
-	entity.create_entity(pos)
-	_entities[entity_name] = entity
-	return entity
+#	self.GUID = EntityManager.get_GUID()
+	self.emit_signal("create_entity_completed",entity)
 
 func get_GUID() -> int:
 	_entity_GUID += 1

@@ -7,7 +7,7 @@
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 32, 32 )
+0/region = Rect2( 64, 48, 16, 16 )
 0/tile_mode = 2
 0/autotile/icon_coordinate = Vector2( 0, 0 )
 0/autotile/tile_size = Vector2( 32, 32 )
@@ -28,7 +28,7 @@
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 32, 32 )
+1/region = Rect2( 0, 0, 16, 16 )
 1/tile_mode = 1
 1/autotile/bitmask_mode = 0
 1/autotile/bitmask_flags = [  ]
