@@ -7,8 +7,8 @@ var player_prefab
 func _ready():
 	yield(get_parent(),"ready")
 	print("controller")
-	player_prefab = GameInstance.player_character.game_prefab as KinematicBody2D
-	assert(player_prefab != null)
+#	assert(player_prefab != null)
+
 
 func get_input():
 	velocity = Vector2()
@@ -23,5 +23,8 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func _process(delta):
-	get_input()
-	velocity = player_prefab.move_and_slide(velocity)
+	if player_prefab == null:
+		player_prefab = GameInstance.player_character.game_prefab as KinematicBody2D
+	else:
+		get_input()
+		velocity = player_prefab.move_and_slide(velocity)
