@@ -22,6 +22,13 @@ func get_input():
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
 
+	if velocity != Vector2.ZERO:
+		owner_prefab.AnimationTree.set("parameters/walk/blend_position",velocity)
+		owner_prefab.AnimationTree.set("parameters/idle/blend_position",velocity)
+		owner_prefab.AnimationState.travel("walk")
+	else:
+		owner_prefab.AnimationState.travel("idle")
+
 func _process(delta):
 	get_input()
 	velocity = owner_prefab.move_and_slide(velocity)
