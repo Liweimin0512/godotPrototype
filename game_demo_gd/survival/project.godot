@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "ComponentBase",
 "class": "InventoryComponent",
 "language": "GDScript",
-"path": "res://addons/QFramework/components/inventory.gd"
+"path": "res://components/inventory.gd"
 }, {
 "base": "Task",
 "class": "Invert",
@@ -72,12 +72,7 @@ _global_script_classes=[ {
 "base": "ComponentBase",
 "class": "Locomotor",
 "language": "GDScript",
-"path": "res://addons/QFramework/components/locomotor.gd"
-}, {
-"base": "ComponentBase",
-"class": "MoveControllerComponent",
-"language": "GDScript",
-"path": "res://addons/QFramework/components/component_move_controller.gd"
+"path": "res://components/locomotor.gd"
 }, {
 "base": "Task",
 "class": "Parallel",
@@ -188,7 +183,6 @@ _global_script_class_icons={
 "Invert": "",
 "Leaf": "",
 "Locomotor": "",
-"MoveControllerComponent": "",
 "Parallel": "",
 "PlayerBase": "",
 "PlayerState": "",

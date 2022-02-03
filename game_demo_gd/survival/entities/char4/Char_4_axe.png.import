@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Char_4_pickaxe.png-45aec0a7fb707c81e28263220c2b38d2.stex"
+path="res://.import/Char_4_axe.png-46c57a42d9254bc01cd3948f905343d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/QFramework/char4/Char_4_pickaxe.png"
-dest_files=[ "res://.import/Char_4_pickaxe.png-45aec0a7fb707c81e28263220c2b38d2.stex" ]
+source_file="res://entities/char4/Char_4_axe.png"
+dest_files=[ "res://.import/Char_4_axe.png-46c57a42d9254bc01cd3948f905343d7.stex" ]
 
 [params]
 

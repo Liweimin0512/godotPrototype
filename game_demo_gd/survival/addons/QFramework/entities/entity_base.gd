@@ -29,9 +29,15 @@ var age = 0
 
 signal enter_limbo
 signal exit_limbo
+signal create_prafab_completed
+
+
 
 var compoent_path = "res://components/"
 var state_graph_path = "res://state_graphs/"
+
+func _ready():
+	connect("create_prafab_completed",self,"on_create_prafab_completed")
 
 func _load_component(name):
 	if _components[name] == null :
@@ -57,7 +63,7 @@ func create_entity(pos : Vector2):
 	print("create_entity_path: " + String(res_paths))	
 	var res = yield(res_loader.load_start(res_paths),"completed")
 	game_prefab = res[0].instance()
-	print(game_prefab.name)
+	self.emit_signal("create_prafab_completed")
 	game_prefab.position = pos
 	self.add_child(game_prefab)
 	self.GUID = EntityManager.get_GUID()

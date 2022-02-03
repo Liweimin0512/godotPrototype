@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Char_4_wateringcan.png-a0c88d3986e26d1b47632791ac7453ce.stex"
+path="res://.import/Char4_Sword_32px.png-9121c3e313e3f2494d69f3a2255fd6c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/QFramework/char4/Char_4_wateringcan.png"
-dest_files=[ "res://.import/Char_4_wateringcan.png-a0c88d3986e26d1b47632791ac7453ce.stex" ]
+source_file="res://entities/char4/Char4_Sword_32px.png"
+dest_files=[ "res://.import/Char4_Sword_32px.png-9121c3e313e3f2494d69f3a2255fd6c0.stex" ]
 
 [params]
 
