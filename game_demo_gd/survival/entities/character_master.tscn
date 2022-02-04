@@ -2539,11 +2539,12 @@ texture = ExtResource( 5 )
 hframes = 9
 
 [node name="sprite_tool" type="Sprite" parent="."]
-texture = ExtResource( 22 )
+texture = ExtResource( 42 )
 hframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../sprite_body")
+autoplay = "Idle"
 anims/Attack = SubResource( 3 )
 anims/Axe = SubResource( 8 )
 anims/CARRY = SubResource( 9 )
