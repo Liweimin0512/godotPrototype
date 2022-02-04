@@ -226,7 +226,6 @@ _global_script_class_icons={
 
 config/name="Survival"
 run/main_scene="res://scenes/world.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 
