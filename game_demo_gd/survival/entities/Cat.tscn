@@ -1,10 +1,69 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://entities/Animals/Cat.png" type="Texture" id=1]
+[ext_resource path="res://components/move.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0
 height = 2.0
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "idle_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=13]
+blend_point_0/node = SubResource( 15 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 16 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 17 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 18 )
+blend_point_3/pos = Vector2( -1, 0 )
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "walk_down"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "walk_up"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "walk_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=14]
+blend_point_0/node = SubResource( 19 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 20 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 21 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 22 )
+blend_point_3/pos = Vector2( -1, 0 )
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/idle/node = SubResource( 13 )
+states/idle/position = Vector2( 412, 65 )
+states/walk/node = SubResource( 14 )
+states/walk/position = Vector2( 715, 86 )
+transitions = [ "idle", "walk", SubResource( 23 ), "walk", "idle", SubResource( 24 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -165,6 +224,14 @@ vframes = 20
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 11 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 12 )
+parameters/idle/blend_position = Vector2( -0.0157343, -0.678049 )
+parameters/walk/blend_position = Vector2( -0.0541958, -0.327635 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
 anims/idle_down = SubResource( 7 )
@@ -175,3 +242,6 @@ anims/walk_down = SubResource( 3 )
 anims/walk_left = SubResource( 6 )
 anims/walk_right = SubResource( 4 )
 anims/walk_up = SubResource( 5 )
+
+[node name="ComponetManager" type="Node" parent="."]
+script = ExtResource( 2 )
