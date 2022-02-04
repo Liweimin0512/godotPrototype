@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cow.png-1aa2a932cc1186617f3a38e3852e5792.stex"
+path="res://.import/Dog.png-5375abe9d06a9861bf9cd742b8791d70.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/character_animation/Animals/Cow.png"
-dest_files=[ "res://.import/Cow.png-1aa2a932cc1186617f3a38e3852e5792.stex" ]
+source_file="res://entities/Animals/Dog.png"
+dest_files=[ "res://.import/Dog.png-5375abe9d06a9861bf9cd742b8791d70.stex" ]
 
 [params]
 

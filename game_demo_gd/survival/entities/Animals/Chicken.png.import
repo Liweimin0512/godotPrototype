@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Small_birds.png-f4b2f250bfad4bf24fe442a8423bafeb.stex"
+path="res://.import/Chicken.png-23dcfd9956f90378c1196056d4b3f6c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/character_animation/Animals/Small_birds.png"
-dest_files=[ "res://.import/Small_birds.png-f4b2f250bfad4bf24fe442a8423bafeb.stex" ]
+source_file="res://entities/Animals/Chicken.png"
+dest_files=[ "res://.import/Chicken.png-23dcfd9956f90378c1196056d4b3f6c1.stex" ]
 
 [params]
 
