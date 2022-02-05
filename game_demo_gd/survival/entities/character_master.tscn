@@ -64,6 +64,7 @@
 
 [sub_resource type="Animation" id=3]
 resource_name = "Attack"
+length = 0.9
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
@@ -2539,7 +2540,7 @@ texture = ExtResource( 5 )
 hframes = 9
 
 [node name="sprite_tool" type="Sprite" parent="."]
-texture = ExtResource( 42 )
+texture = ExtResource( 18 )
 hframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
