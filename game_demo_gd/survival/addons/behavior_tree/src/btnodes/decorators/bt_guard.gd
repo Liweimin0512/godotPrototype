@@ -11,6 +11,16 @@ extends BTDecorator
 #
 # A locked BTGuard will always return fail().
 
+# 可以把整根树枝都锁在下面。锁发生在孩子发出 tick() 之后，
+# 或者在任何其他BTNode滴答声之后。然后它会在给定的时间内保持锁定，或者直到下一个时间
+# 指定的节点标记。你可以从检查员那里设置所有这些。
+# 如果没有指定锁存器，则lock_If变量将基于子项。
+# 如果未指定解锁器，则unlock_If变量无效，只有lock_time将无效
+# 被考虑，反之亦然。
+# 您还可以选择永久锁定或启动时锁定。
+#
+# 锁定的BTGuard将始终返回fail（）。
+
 export(bool) var start_locked = false
 export(bool) var permanent = false
 export(NodePath) var _locker

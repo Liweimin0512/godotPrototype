@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://entities/goblin/spr_attack_strip10.png" type="Texture" id=1]
 [ext_resource path="res://entities/goblin/spr_axe_strip10.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://entities/goblin/spr_walk_strip8.png" type="Texture" id=7]
 [ext_resource path="res://addons/QFramework/components/component_mananger.gd" type="Script" id=8]
 [ext_resource path="res://components/move.gd" type="Script" id=9]
+[ext_resource path="res://behavior_tree/BT_goblin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/behavior_tree/src/blackboard.gd" type="Script" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 0.0
@@ -392,7 +394,8 @@ start_node = "idle&walk&run"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=11]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Character_Goblin" type="KinematicBody2D"]
+scale = Vector2( 3, 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -423,3 +426,10 @@ script = ExtResource( 8 )
 
 [node name="Move" type="Node" parent="ComponetManager"]
 script = ExtResource( 9 )
+
+[node name="BB_goblin" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="BT_goblin" parent="." instance=ExtResource( 10 )]
+_blackboard = NodePath("../BB_goblin")
+_agent = NodePath("..")

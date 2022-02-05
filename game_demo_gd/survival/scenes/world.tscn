@@ -1,3 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entities/character_goblin.tscn" type="PackedScene" id=1]
 
 [node name="World" type="CanvasLayer"]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 375.61, 121.898 )

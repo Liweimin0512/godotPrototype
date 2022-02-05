@@ -1,0 +1,83 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://addons/behavior_tree/src/behavior_tree.gd" type="Script" id=1]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/decorators/bt_always.gd" type="Script" id=2]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/composites/bt_selector.gd" type="Script" id=3]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/composites/bt_sequence.gd" type="Script" id=4]
+[ext_resource path="res://behavior_tree/bt_example/conditions/target_aquired.gd" type="Script" id=5]
+[ext_resource path="res://behavior_tree/bt_example/leaves/take_cover.gd" type="Script" id=6]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/composites/bt_random_selector.gd" type="Script" id=7]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/leaves/bt_wait.gd" type="Script" id=8]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/decorators/bt_guard.gd" type="Script" id=9]
+[ext_resource path="res://behavior_tree/bt_example/leaves/reload.gd" type="Script" id=10]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/decorators/bt_repeat.gd" type="Script" id=11]
+[ext_resource path="res://behavior_tree/bt_example/conditions/out_of_ammo.gd" type="Script" id=12]
+[ext_resource path="res://behavior_tree/bt_example/leaves/shoot.gd" type="Script" id=13]
+[ext_resource path="res://addons/behavior_tree/src/btnodes/decorators/bt_repeat_until.gd" type="Script" id=14]
+
+[node name="BehaviorTree" type="Node"]
+script = ExtResource( 1 )
+is_active = true
+debug = true
+
+[node name="BTSequence" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Always succeed" type="Node" parent="BTSequence"]
+script = ExtResource( 2 )
+always_what = 1
+
+[node name="Lock while taking cover" type="Node" parent="BTSequence/Always succeed"]
+script = ExtResource( 9 )
+_locker = NodePath("../../BTSelector/Out of ammo\?/BTSequence/Repeat Until Success/Take Cover")
+_unlocker = NodePath("../../BTSelector/Out of ammo\?/BTSequence/Reload")
+unlock_if = 1
+
+[node name="BTRandomSelector" type="Node" parent="BTSequence/Always succeed/Lock while taking cover"]
+script = ExtResource( 7 )
+
+[node name="Wait 1 sec" type="Node" parent="BTSequence/Always succeed/Lock while taking cover/BTRandomSelector"]
+script = ExtResource( 8 )
+debug = true
+wait_time = 1.0
+
+[node name="Wait 2 sec" type="Node" parent="BTSequence/Always succeed/Lock while taking cover/BTRandomSelector"]
+script = ExtResource( 8 )
+debug = true
+wait_time = 2.0
+
+[node name="BTSelector" type="Node" parent="BTSequence"]
+script = ExtResource( 3 )
+
+[node name="Out of ammo\?" type="Node" parent="BTSequence/BTSelector"]
+script = ExtResource( 12 )
+debug = true
+
+[node name="BTSequence" type="Node" parent="BTSequence/BTSelector/Out of ammo\?"]
+script = ExtResource( 4 )
+
+[node name="Repeat Until Success" type="Node" parent="BTSequence/BTSelector/Out of ammo\?/BTSequence"]
+script = ExtResource( 14 )
+until_what = 1
+
+[node name="Take Cover" type="Node" parent="BTSequence/BTSelector/Out of ammo\?/BTSequence/Repeat Until Success"]
+script = ExtResource( 6 )
+
+[node name="Reload" type="Node" parent="BTSequence/BTSelector/Out of ammo\?/BTSequence"]
+script = ExtResource( 10 )
+debug = true
+
+[node name="Repeat until fail" type="Node" parent="BTSequence/BTSelector"]
+script = ExtResource( 14 )
+
+[node name="Target Aquired\?" type="Node" parent="BTSequence/BTSelector/Repeat until fail"]
+script = ExtResource( 5 )
+debug = true
+
+[node name="Repeat twice" type="Node" parent="BTSequence/BTSelector/Repeat until fail/Target Aquired\?"]
+script = ExtResource( 11 )
+times_to_repeat = 2
+
+[node name="Shoot" type="Node" parent="BTSequence/BTSelector/Repeat until fail/Target Aquired\?/Repeat twice"]
+script = ExtResource( 13 )
+debug = true

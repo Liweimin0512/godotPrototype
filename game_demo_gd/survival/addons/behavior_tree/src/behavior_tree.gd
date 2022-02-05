@@ -3,6 +3,8 @@ extends Node
 
 # This is your main node. Put one of these at the root of the scene and start adding BTNodes.
 # A Behavior Tree only accepts ONE entry point (so one child), for example a BTSequence or a BTSelector.
+# 这是你的主要节点。将其中一个放置在场景的根部，然后开始添加BTNodes。
+# 行为树只接受一个入口点（因此只有一个子项），例如BTSequence或BTSelector。
 
 export(bool) var is_active: bool = false
 export(NodePath) var _blackboard

@@ -3,6 +3,9 @@ class_name PlayerController
 
 var velocity : Vector2
 export (int) var speed = 200
+export (int) var max_speed = 500
+
+signal character_moving
 
 func _enter_tree():
 	yield(owner,"tree_entered")
@@ -23,11 +26,12 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 	if velocity != Vector2.ZERO:
-		owner_prefab.AnimationTree.set("parameters/walk/blend_position",velocity)
-		owner_prefab.AnimationTree.set("parameters/idle/blend_position",velocity)
-		owner_prefab.AnimationState.travel("walk")
-	else:
-		owner_prefab.AnimationState.travel("idle")
+		self.emit_signal("character_moving",velocity)
+	owner_prefab.AnimationTree.set("parameters/idle&walk&run/blend_position",velocity.length()/max_speed)
+#		owner_prefab.AnimationTree.set("parameters/idle/blend_position",velocity)
+#		owner_prefab.AnimationState.travel("walk")
+#	else:
+#		owner_prefab.AnimationState.travel("idle")
 
 func _process(delta):
 	get_input()

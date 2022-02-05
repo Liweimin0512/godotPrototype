@@ -1,12 +1,12 @@
 class_name BTConditional, "res://addons/behavior_tree/icons/btconditional.png"
 extends BTDecorator
 
-# Used to create conditions. The condition is checked BEFORE ticking,
-# and if the condition is met the child node is executed.
-# The conditional then returns the same state as the child node, as 
-# a normal decorator, not the result of the condition.
-# If you want to know the result of the condition, store in the blackboard
-# during _pre_tick().
+# 用来创造条件。在 tick() 之前，先检查情况，
+# 如果满足条件，则执行子节点。
+# 然后，条件返回与子节点相同的状态，如下所示：
+# 一个普通的装饰师，而不是条件的结果。
+# 如果你想知道条件的结果，把它存储在黑板上
+# 在_pre_tick（）期间。
 
 export(bool) var reverse: bool = false
 
