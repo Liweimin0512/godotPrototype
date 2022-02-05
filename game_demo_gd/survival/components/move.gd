@@ -21,7 +21,7 @@ func get_input():
 		velocity.y -= 1
 
 func _process(delta):
-    velocity = velocity.normalized() * speed
+	velocity = velocity.normalized() * speed
 
 	if velocity != Vector2.ZERO:
 		owner_prefab.AnimationTree.set("parameters/walk/blend_position",velocity)

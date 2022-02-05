@@ -4,11 +4,11 @@ class_name Task
 
 # States
 enum {
-	FRESH,
-	RUNNING,
-	FAILED,
-	SUCCEEDED,
-	CANCELLED
+	FRESH, 		# 新鲜的
+	RUNNING, 	# 运行中
+	FAILED, 	# 失败
+	SUCCEEDED, 	# 成功
+	CANCELLED 	# 取消
 }
 
 var control = null
