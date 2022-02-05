@@ -5,4 +5,4 @@
 [node name="World" type="CanvasLayer"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 375.61, 121.898 )
+position = Vector2( 461.93, 194.804 )
