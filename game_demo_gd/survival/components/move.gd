@@ -6,6 +6,7 @@ export (int) var speed := 240
 export (int) var max_speed = 500
 
 var _dir := Vector2()
+var _target := Vector2()
 
 signal character_moving
 
@@ -15,27 +16,20 @@ func _enter_tree():
 	owner_prefab as KinematicBody2D
 	assert(owner_prefab != null)
 
-#func get_input():
-#	velocity = Vector2()
-#	if Input.is_action_pressed("ui_right"):
-#		velocity.x += 1
-#	if Input.is_action_pressed('ui_left'):
-#		velocity.x -= 1
-#	if Input.is_action_pressed('ui_down'):
-#		velocity.y += 1
-#	if Input.is_action_pressed('ui_up'):
-#		velocity.y -= 1
-#
-#	velocity = velocity.normalized() * speed	
-	
-func _physics_process(delta):
-	var motion = self._dir * self.speed
-	if motion != Vector2.ZERO:
-		owner_prefab.move_and_slide(motion)
-		self.emit_signal("character_moving",motion)
-		print(motion.length())
-	owner_prefab.animation_tree.set("parameters/idle&walk&run/blend_position",motion.length()/max_speed)
+func _physics_process(_delta):
+	self._move()
 
 func move_to_target(target : Vector2):
 	if owner_prefab:
-		self._dir = (target - owner_prefab.position).normalized()
+		self._target = target
+
+func _move():
+	# print(abs(self._target.length() - owner_prefab.position.length()))
+	if abs(self._target.length() - owner_prefab.position.length()) <= 1 :
+		self.emit_signal("character_moving",Vector2.ZERO)
+		return
+	self._dir = (self._target - owner_prefab.position).normalized()
+	var motion = self._dir * self.speed
+	owner_prefab.move_and_slide(motion)
+	self.emit_signal("character_moving",motion)
+	# print(motion.length())

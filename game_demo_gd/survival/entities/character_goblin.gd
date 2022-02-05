@@ -15,7 +15,9 @@ func _ready():
 	move_component.connect("character_moving",self,"_on_character_moving")
 
 func _on_character_moving(motion):
-	if motion.x < 0 :
+	var max_speed = move_component.max_speed
+	if motion.x <= 0 :
 		sprite.flip_h = true
-	elif motion.x >0 :
+	elif motion.x > 0 :
 		sprite.flip_h = false
+	animation_tree.set("parameters/idle&walk&run/blend_position",motion.length()/max_speed)
